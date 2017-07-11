@@ -16,19 +16,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func aboutButton(_ sender: Any) {
-        let alertController = UIAlertController(title: "Coming soon!", message:
-            "To this app.", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style:
-            UIAlertActionStyle.default, handler:nil))
-        present(alertController, animated: true, completion: nil)
+        let AboutVC = self.storyboard?.instantiateViewController(withIdentifier: "aboutVC")
+        self.present(AboutVC!, animated: true, completion: nil)
     }
     
     @IBAction func startButton(_ sender: Any) {
-        let alertController = UIAlertController(title: "Coming soon!", message:
-            "To this app.", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style:
-            UIAlertActionStyle.default, handler:nil))
-        present(alertController, animated: true, completion: nil)
+        let StartVC = self.storyboard?.instantiateViewController(withIdentifier: "startVC")
+        self.present(StartVC!, animated: true, completion: nil)
     }
     
     @IBAction func shareButton(_ sender: Any) {

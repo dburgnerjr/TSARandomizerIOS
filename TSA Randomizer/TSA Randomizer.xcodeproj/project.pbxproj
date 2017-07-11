@@ -12,6 +12,8 @@
 		231CFCD31F12EE17009DA084 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231CFCD11F12EE17009DA084 /* Main.storyboard */; };
 		231CFCD51F12EE17009DA084 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 231CFCD41F12EE17009DA084 /* Assets.xcassets */; };
 		231CFCD81F12EE17009DA084 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231CFCD61F12EE17009DA084 /* LaunchScreen.storyboard */; };
+		23620CE41F15879B001C5B0F /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23620CE31F15879B001C5B0F /* AboutScreen.swift */; };
+		23620CE61F158BFF001C5B0F /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23620CE51F158BFF001C5B0F /* StartScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		231CFCD41F12EE17009DA084 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "TSA Randomizer/Assets.xcassets"; sourceTree = "<group>"; };
 		231CFCD71F12EE17009DA084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		231CFCD91F12EE17009DA084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "TSA Randomizer/Info.plist"; sourceTree = "<group>"; };
+		23620CE31F15879B001C5B0F /* AboutScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
+		23620CE51F158BFF001C5B0F /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,8 @@
 		231CFCC11F12EE17009DA084 = {
 			isa = PBXGroup;
 			children = (
+				23620CE31F15879B001C5B0F /* AboutScreen.swift */,
+				23620CE51F158BFF001C5B0F /* StartScreen.swift */,
 				231CFCCD1F12EE17009DA084 /* AppDelegate.swift */,
 				231CFCCF1F12EE17009DA084 /* ViewController.swift */,
 				231CFCD11F12EE17009DA084 /* Main.storyboard */,
@@ -131,6 +137,8 @@
 			files = (
 				231CFCD01F12EE17009DA084 /* ViewController.swift in Sources */,
 				231CFCCE1F12EE17009DA084 /* AppDelegate.swift in Sources */,
+				23620CE61F158BFF001C5B0F /* StartScreen.swift in Sources */,
+				23620CE41F15879B001C5B0F /* AboutScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +306,7 @@
 				231CFCDE1F12EE17009DA084 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
