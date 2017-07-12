@@ -19,10 +19,15 @@ class AboutScreen: UIViewController {
         super.viewDidAppear(animated)
     }
     
-    
     @IBAction func backButton(_ sender: Any) {
         let MainVC = self.storyboard?.instantiateViewController(withIdentifier: "mainVC")
         self.present(MainVC!, animated: true, completion: nil)
         
+    }
+    
+    
+    @IBAction func storyButton(_ sender: Any) {
+        let url = URL(string: "http://www.geek.com/apps/tsa-paid-1-4-million-for-randomizer-app-that-chooses-left-or-right-1651337/")!
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }
