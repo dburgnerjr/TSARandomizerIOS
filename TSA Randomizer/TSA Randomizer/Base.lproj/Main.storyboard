@@ -165,16 +165,8 @@
                                     <action selector="backButton:" destination="zA2-gr-Yed" eventType="touchUpInside" id="lS5-3Y-9HQ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Left_Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="z84-5H-wjk">
-                                <rect key="frame" x="57" y="284" width="300" height="166"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Right_Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="w08-3N-Rg5">
-                                <rect key="frame" x="57" y="284" width="300" height="168"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGe-9D-jF6">
-                                <rect key="frame" x="107" y="343" width="200" height="50"/>
+                                <rect key="frame" x="107" y="519" width="200" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.24371114373207092" green="0.61997121572494507" blue="0.76522916555404663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -182,9 +174,18 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4T-YV-d1z">
+                                <rect key="frame" x="87" y="304" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="arrowView" destination="n4T-YV-d1z" id="fPG-Jv-huL"/>
+                        <outlet property="clickHereButton" destination="SGe-9D-jF6" id="Xgd-rt-VID"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tek-R4-9LQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -192,8 +193,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Left_Arrow" width="400" height="196"/>
-        <image name="Right_Arrow" width="400" height="196"/>
         <image name="TSA_Randomizer_logo" width="400" height="196"/>
     </resources>
 </document>
