@@ -36,11 +36,16 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     }
     
     @IBAction func shareButton(_ sender: Any) {
-        let alertController = UIAlertController(title: "Coming soon!", message:
-            "To this app.", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style:
-            UIAlertActionStyle.default, handler:nil))
-        present(alertController, animated: true, completion: nil)
+        //Set the default sharing message.
+        let message = "Check out this app page."
+        //Set the link to share.
+        if let link = NSURL(string: "https://www.facebook.com/TSA-Randomizer-297311663942878/")
+        {
+            let objectsToShare = [message,link] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
+            self.present(activityVC, animated: true, completion: nil)
+        }
     }
     
     @IBAction func removeAdsButton(_ sender: Any) {
