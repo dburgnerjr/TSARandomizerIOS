@@ -35,14 +35,19 @@ class StartScreen: UIViewController, GADBannerViewDelegate {
     }
     
     func buttonClicked(_ sender: Any) {
-        //clickHereButton.isHidden = true
+        clickHereButton.isHidden = true
         let nRandom = Int(arc4random_uniform(2))
         if (nRandom == 0) {
             arrowView.image = #imageLiteral(resourceName: "Left_Arrow")
+            
         } else {
             arrowView.image = #imageLiteral(resourceName: "Right_Arrow")
         }
-        //clickHereButton.isHidden = false
+        arrowView.alpha = 1.0
+        UIView .animate(withDuration: 5.0) {
+            self.arrowView.alpha = 0.0;
+        }
+        clickHereButton.isHidden = false
     }
 
     // MARK: -  ADMOB BANNER
