@@ -27,15 +27,20 @@ class StartScreen: UIViewController, GADBannerViewDelegate {
         // Init AdMob banner
         initAdMobBanner()
 
-        clickHereButton.addTarget(self, action: #selector(StartScreen.buttonClicked(_:)), for: .touchUpInside)
+        clickHereButton.isHidden = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    func buttonClicked(_ sender: Any) {
+    @IBAction func clickHereButton(_ sender: Any) {
+        showImage()
         clickHereButton.isHidden = true
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(StartScreen.showClickHereButton), userInfo: self, repeats: false)
+    }
+    
+    func showImage() {
         let nRandom = Int(arc4random_uniform(2))
         if (nRandom == 0) {
             arrowView.image = #imageLiteral(resourceName: "Left_Arrow")
@@ -47,6 +52,9 @@ class StartScreen: UIViewController, GADBannerViewDelegate {
         UIView .animate(withDuration: 5.0) {
             self.arrowView.alpha = 0.0;
         }
+    }
+    
+    func showClickHereButton() {
         clickHereButton.isHidden = false
     }
 
