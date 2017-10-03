@@ -12,17 +12,7 @@
 		231CFCD31F12EE17009DA084 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231CFCD11F12EE17009DA084 /* Main.storyboard */; };
 		231CFCD51F12EE17009DA084 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 231CFCD41F12EE17009DA084 /* Assets.xcassets */; };
 		231CFCD81F12EE17009DA084 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231CFCD61F12EE17009DA084 /* LaunchScreen.storyboard */; };
-		2355B08D1F1846F600FAFA55 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355B08C1F1846F600FAFA55 /* FirebaseAnalytics.framework */; };
-		2355B08F1F18473000FAFA55 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355B08E1F18473000FAFA55 /* FirebaseCore.framework */; };
-		2355B0911F18475500FAFA55 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355B0901F18475500FAFA55 /* FirebaseCoreDiagnostics.framework */; };
-		2355B0931F18475C00FAFA55 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355B0921F18475C00FAFA55 /* FirebaseInstanceID.framework */; };
-		2355B0951F18476C00FAFA55 /* FirebaseNanoPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355B0941F18476C00FAFA55 /* FirebaseNanoPB.framework */; };
-		2355B0971F18477400FAFA55 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355B0961F18477400FAFA55 /* GoogleToolboxForMac.framework */; };
-		2355B0991F18477B00FAFA55 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355B0981F18477B00FAFA55 /* nanopb.framework */; };
-		2355B09B1F1847D800FAFA55 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355B09A1F1847D800FAFA55 /* GoogleMobileAds.framework */; };
-		2355B09D1F18482900FAFA55 /* FirebasePerformance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355B09C1F18482900FAFA55 /* FirebasePerformance.framework */; };
-		2355B09F1F18484800FAFA55 /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355B09E1F18484800FAFA55 /* GTMSessionFetcher.framework */; };
-		2355B0A11F18486800FAFA55 /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355B0A01F18486800FAFA55 /* Protobuf.framework */; };
+		2355B09B1F1847D800FAFA55 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355B09A1F1847D800FAFA55 /* GoogleMobileAds.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		23620CE41F15879B001C5B0F /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23620CE31F15879B001C5B0F /* AboutScreen.swift */; };
 		23620CE61F158BFF001C5B0F /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23620CE51F158BFF001C5B0F /* StartScreen.swift */; };
 /* End PBXBuildFile section */
@@ -35,21 +25,10 @@
 		231CFCD41F12EE17009DA084 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "TSA Randomizer/Assets.xcassets"; sourceTree = "<group>"; };
 		231CFCD71F12EE17009DA084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		231CFCD91F12EE17009DA084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "TSA Randomizer/Info.plist"; sourceTree = "<group>"; };
-		2355B08C1F1846F600FAFA55 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		2355B08E1F18473000FAFA55 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = "<group>"; };
-		2355B0901F18475500FAFA55 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
-		2355B0921F18475C00FAFA55 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		2355B0941F18476C00FAFA55 /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseNanoPB.framework; sourceTree = "<group>"; };
-		2355B0961F18477400FAFA55 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleToolboxForMac.framework; sourceTree = "<group>"; };
-		2355B0981F18477B00FAFA55 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nanopb.framework; sourceTree = "<group>"; };
 		2355B09A1F1847D800FAFA55 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		2355B09C1F18482900FAFA55 /* FirebasePerformance.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebasePerformance.framework; sourceTree = "<group>"; };
-		2355B09E1F18484800FAFA55 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = "<group>"; };
-		2355B0A01F18486800FAFA55 /* Protobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Protobuf.framework; sourceTree = "<group>"; };
-		2355B0A21F184A1C00FAFA55 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
-		2355B0A31F184A4400FAFA55 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		23620CE31F15879B001C5B0F /* AboutScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
 		23620CE51F158BFF001C5B0F /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
+		23725E131F81678A00DEA915 /* TSA Randomizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "TSA Randomizer.entitlements"; path = "TSA Randomizer/TSA Randomizer.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,17 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2355B0911F18475500FAFA55 /* FirebaseCoreDiagnostics.framework in Frameworks */,
-				2355B08F1F18473000FAFA55 /* FirebaseCore.framework in Frameworks */,
 				2355B09B1F1847D800FAFA55 /* GoogleMobileAds.framework in Frameworks */,
-				2355B0951F18476C00FAFA55 /* FirebaseNanoPB.framework in Frameworks */,
-				2355B0A11F18486800FAFA55 /* Protobuf.framework in Frameworks */,
-				2355B09F1F18484800FAFA55 /* GTMSessionFetcher.framework in Frameworks */,
-				2355B0991F18477B00FAFA55 /* nanopb.framework in Frameworks */,
-				2355B09D1F18482900FAFA55 /* FirebasePerformance.framework in Frameworks */,
-				2355B0971F18477400FAFA55 /* GoogleToolboxForMac.framework in Frameworks */,
-				2355B08D1F1846F600FAFA55 /* FirebaseAnalytics.framework in Frameworks */,
-				2355B0931F18475C00FAFA55 /* FirebaseInstanceID.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +46,7 @@
 		231CFCC11F12EE17009DA084 = {
 			isa = PBXGroup;
 			children = (
+				23725E131F81678A00DEA915 /* TSA Randomizer.entitlements */,
 				23620CE31F15879B001C5B0F /* AboutScreen.swift */,
 				23620CE51F158BFF001C5B0F /* StartScreen.swift */,
 				231CFCCD1F12EE17009DA084 /* AppDelegate.swift */,
@@ -86,19 +56,7 @@
 				231CFCD61F12EE17009DA084 /* LaunchScreen.storyboard */,
 				231CFCD91F12EE17009DA084 /* Info.plist */,
 				231CFCCB1F12EE17009DA084 /* Products */,
-				2355B08C1F1846F600FAFA55 /* FirebaseAnalytics.framework */,
-				2355B08E1F18473000FAFA55 /* FirebaseCore.framework */,
-				2355B0901F18475500FAFA55 /* FirebaseCoreDiagnostics.framework */,
-				2355B0921F18475C00FAFA55 /* FirebaseInstanceID.framework */,
-				2355B0941F18476C00FAFA55 /* FirebaseNanoPB.framework */,
-				2355B0961F18477400FAFA55 /* GoogleToolboxForMac.framework */,
-				2355B0981F18477B00FAFA55 /* nanopb.framework */,
 				2355B09A1F1847D800FAFA55 /* GoogleMobileAds.framework */,
-				2355B09C1F18482900FAFA55 /* FirebasePerformance.framework */,
-				2355B09E1F18484800FAFA55 /* GTMSessionFetcher.framework */,
-				2355B0A01F18486800FAFA55 /* Protobuf.framework */,
-				2355B0A21F184A1C00FAFA55 /* Firebase.h */,
-				2355B0A31F184A4400FAFA55 /* module.modulemap */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,13 +95,25 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Daniel Burgner";
 				TargetAttributes = {
 					231CFCC91F12EE17009DA084 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = JEGM3HZ27P;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -224,7 +194,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -232,7 +204,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -258,6 +234,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -275,7 +252,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -283,7 +262,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -302,6 +285,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				"OTHER_LDFLAGS[arch=*]" = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -313,6 +297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "TSA Randomizer/TSA Randomizer.entitlements";
 				DEVELOPMENT_TEAM = JEGM3HZ27P;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -320,9 +305,10 @@
 				);
 				INFOPLIST_FILE = "TSA Randomizer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "dburgnerjr.TSA-Randomizer";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dburgnerjr.TSARandomizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -330,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "TSA Randomizer/TSA Randomizer.entitlements";
 				DEVELOPMENT_TEAM = JEGM3HZ27P;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -337,10 +324,10 @@
 				);
 				INFOPLIST_FILE = "TSA Randomizer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "dburgnerjr.TSA-Randomizer";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dburgnerjr.TSARandomizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Users/dburgnerjr/TSARandomizerIOS/TSA Randomizer";
 			};
 			name = Release;
