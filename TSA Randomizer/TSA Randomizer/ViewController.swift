@@ -13,7 +13,8 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     
     // Ad banner and interstitial views
     var adMobBannerView = GADBannerView()
-    
+
+    @IBOutlet weak var removeAdsButton: UIButton!
     // IMPORTANT: REPLACE THE RED STRING BELOW WITH THE AD UNIT ID YOU'VE GOT BY REGISTERING YOUR APP IN http://apps.admob.com
     let ADMOB_BANNER_UNIT_ID = "ca-app-pub-9733347540588953/7805958028"
     
@@ -23,6 +24,7 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         
         // Init AdMob banner
         initAdMobBanner()
+        removeAdsButton.isHidden = true
     }
 
     @IBAction func aboutButton(_ sender: Any) {
@@ -37,9 +39,9 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     
     @IBAction func shareButton(_ sender: Any) {
         //Set the default sharing message.
-        let message = "Check out this app page."
+        let message = "Check out this app I downloaded."
         //Set the link to share.
-        if let link = NSURL(string: "https://www.facebook.com/TSA-Randomizer-297311663942878/")
+        if let link = NSURL(string: "itms-apps://itunes.apple.com/us/app/tsa-randomizer/id1291775688?ls=1&mt=8")
         {
             let objectsToShare = [message,link] as [Any]
             let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
