@@ -26,6 +26,13 @@ class StartScreen: UIViewController, GADBannerViewDelegate {
         
         // Init AdMob banner
         initAdMobBanner()
+        //Check if product is purchased
+        if (UserDefaults.standard.bool(forKey: "purchased")) {
+            // Hide ads
+            hideBanner(adMobBannerView)
+        } else {
+            showBanner(adMobBannerView)
+        }
 
         clickHereButton.isHidden = false
     }

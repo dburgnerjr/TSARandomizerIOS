@@ -8,11 +8,67 @@
 
 import GoogleMobileAds
 import UIKit
+import StoreKit
 
-class ViewController: UIViewController, GADBannerViewDelegate {
+class ViewController: UIViewController, GADBannerViewDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        let count : Int = response.products.count
+        if (count > 0) {
+            let validProduct: SKProduct = response.products[0] as SKProduct
+            if (validProduct.productIdentifier == self.product_id) {
+                print(validProduct.localizedTitle)
+                print(validProduct.localizedDescription)
+                print(validProduct.price)
+                buyProduct(product: validProduct);
+            } else {
+                print(validProduct.productIdentifier)
+            }
+        } else {
+            print("nothing")
+        }
+    }
+
+    func request(_ request: SKRequest, didFailWithError error: Error) {
+        print("Error Fetching product information");
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        for transaction:AnyObject in transactions {
+            if let trans:SKPaymentTransaction = transaction as? SKPaymentTransaction{
+                switch trans.transactionState {
+                case .purchased:
+                    print("Product Purchased");
+                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    // Handle the purchase
+                    UserDefaults.standard.set(true , forKey: "purchased")
+                    hideBanner(adMobBannerView)
+                    break;
+                    
+                case .failed:
+                    print("Purchased Failed");
+                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
+                    break;
+                    
+                case .restored:
+                    print("Already Purchased");
+                    SKPaymentQueue.default().restoreCompletedTransactions()
+                    // Handle the purchase
+                    UserDefaults.standard.set(true , forKey: "purchased")
+                    hideBanner(adMobBannerView)
+                    break;
+                    
+                default:
+                    break;
+                }
+            }
+        }
+    }
+    
     
     // Ad banner and interstitial views
     var adMobBannerView = GADBannerView()
+    
+    var product_id: String?
 
     @IBOutlet weak var removeAdsButton: UIButton!
     // IMPORTANT: REPLACE THE RED STRING BELOW WITH THE AD UNIT ID YOU'VE GOT BY REGISTERING YOUR APP IN http://apps.admob.com
@@ -24,7 +80,17 @@ class ViewController: UIViewController, GADBannerViewDelegate {
         
         // Init AdMob banner
         initAdMobBanner()
-        removeAdsButton.isHidden = true
+        product_id = "com.dburgnerjr.TSARandomizer.tsa_randomizer_remove_ads"
+        //removeAdsButton.isHidden = true
+        SKPaymentQueue.default().add(self)
+        
+        //Check if product is purchased
+        if (UserDefaults.standard.bool(forKey: "purchased")) {
+            // Hide ads
+            hideBanner(adMobBannerView)
+        } else {
+            showBanner(adMobBannerView)
+        }
     }
 
     @IBAction func aboutButton(_ sender: Any) {
@@ -51,11 +117,27 @@ class ViewController: UIViewController, GADBannerViewDelegate {
     }
     
     @IBAction func removeAdsButton(_ sender: Any) {
-        let alertController = UIAlertController(title: "Coming soon!", message:
-            "To this app.", preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style:
-            UIAlertActionStyle.default, handler:nil))
-        present(alertController, animated: true, completion: nil)
+        //let alertController = UIAlertController(title: "Coming soon!", message:
+        //    "To this app.", preferredStyle: UIAlertControllerStyle.alert)
+        //alertController.addAction(UIAlertAction(title: "OK", style:
+        //    UIAlertActionStyle.default, handler:nil))
+        //present(alertController, animated: true, completion: nil)
+        // Can make payments
+        if (SKPaymentQueue.canMakePayments())
+        {
+            let productID:NSSet = NSSet(object: self.product_id!);
+            let productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>);
+            productsRequest.delegate = self;
+            productsRequest.start();
+            print("Fetching Products");
+        }else{
+            print("Can't make purchases");
+        }
+    }
+
+    func buyProduct(product: SKProduct){
+        let payment = SKPayment(product: product)
+        SKPaymentQueue.default().add(payment);
     }
     
     // MARK: -  ADMOB BANNER
