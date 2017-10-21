@@ -15,6 +15,9 @@
 		2355B09B1F1847D800FAFA55 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355B09A1F1847D800FAFA55 /* GoogleMobileAds.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		23620CE41F15879B001C5B0F /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23620CE31F15879B001C5B0F /* AboutScreen.swift */; };
 		23620CE61F158BFF001C5B0F /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23620CE51F158BFF001C5B0F /* StartScreen.swift */; };
+		239F69401F910C05006FD606 /* IAPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F693F1F910C05006FD606 /* IAPProduct.swift */; };
+		239F69421F910D56006FD606 /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239F69411F910D56006FD606 /* IAPService.swift */; };
+		23CA52401F8E6CF600195CDC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CA523F1F8E6CF600195CDC /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		23620CE31F15879B001C5B0F /* AboutScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
 		23620CE51F158BFF001C5B0F /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		23725E131F81678A00DEA915 /* TSA Randomizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "TSA Randomizer.entitlements"; path = "TSA Randomizer/TSA Randomizer.entitlements"; sourceTree = "<group>"; };
+		239F693F1F910C05006FD606 /* IAPProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProduct.swift; sourceTree = "<group>"; };
+		239F69411F910D56006FD606 /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
+		23CA523F1F8E6CF600195CDC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2355B09B1F1847D800FAFA55 /* GoogleMobileAds.framework in Frameworks */,
+				23CA52401F8E6CF600195CDC /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,12 +58,15 @@
 				23620CE51F158BFF001C5B0F /* StartScreen.swift */,
 				231CFCCD1F12EE17009DA084 /* AppDelegate.swift */,
 				231CFCCF1F12EE17009DA084 /* ViewController.swift */,
+				239F693F1F910C05006FD606 /* IAPProduct.swift */,
+				239F69411F910D56006FD606 /* IAPService.swift */,
 				231CFCD11F12EE17009DA084 /* Main.storyboard */,
 				231CFCD41F12EE17009DA084 /* Assets.xcassets */,
 				231CFCD61F12EE17009DA084 /* LaunchScreen.storyboard */,
 				231CFCD91F12EE17009DA084 /* Info.plist */,
 				231CFCCB1F12EE17009DA084 /* Products */,
 				2355B09A1F1847D800FAFA55 /* GoogleMobileAds.framework */,
+				23CA523E1F8E6CF600195CDC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +76,14 @@
 				231CFCCA1F12EE17009DA084 /* TSA Randomizer.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		23CA523E1F8E6CF600195CDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23CA523F1F8E6CF600195CDC /* StoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +173,8 @@
 			files = (
 				231CFCD01F12EE17009DA084 /* ViewController.swift in Sources */,
 				231CFCCE1F12EE17009DA084 /* AppDelegate.swift in Sources */,
+				239F69421F910D56006FD606 /* IAPService.swift in Sources */,
+				239F69401F910C05006FD606 /* IAPProduct.swift in Sources */,
 				23620CE61F158BFF001C5B0F /* StartScreen.swift in Sources */,
 				23620CE41F15879B001C5B0F /* AboutScreen.swift in Sources */,
 			);
@@ -307,7 +327,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dburgnerjr.TSARandomizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -326,7 +346,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dburgnerjr.TSARandomizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "/Users/dburgnerjr/TSARandomizerIOS/TSA Randomizer";
 			};

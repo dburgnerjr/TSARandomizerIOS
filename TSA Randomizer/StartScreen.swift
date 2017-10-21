@@ -29,7 +29,7 @@ class StartScreen: UIViewController, GADBannerViewDelegate {
         //Check if product is purchased
         if (UserDefaults.standard.bool(forKey: "purchased")) {
             // Hide ads
-            hideBanner(adMobBannerView)
+            adMobBannerView.isHidden = true
         } else {
             showBanner(adMobBannerView)
         }
@@ -61,7 +61,7 @@ class StartScreen: UIViewController, GADBannerViewDelegate {
         }
     }
     
-    func showClickHereButton() {
+    @objc func showClickHereButton() {
         clickHereButton.isHidden = false
     }
 
@@ -114,8 +114,7 @@ class StartScreen: UIViewController, GADBannerViewDelegate {
     }
 
     @IBAction func backButton(_ sender: Any) {
-        let MainVC = self.storyboard?.instantiateViewController(withIdentifier: "mainVC")
-        self.present(MainVC!, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

@@ -10,67 +10,15 @@ import GoogleMobileAds
 import UIKit
 import StoreKit
 
-class ViewController: UIViewController, GADBannerViewDelegate, SKProductsRequestDelegate, SKPaymentTransactionObserver {
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        let count : Int = response.products.count
-        if (count > 0) {
-            let validProduct: SKProduct = response.products[0] as SKProduct
-            if (validProduct.productIdentifier == self.product_id) {
-                print(validProduct.localizedTitle)
-                print(validProduct.localizedDescription)
-                print(validProduct.price)
-                buyProduct(product: validProduct);
-            } else {
-                print(validProduct.productIdentifier)
-            }
-        } else {
-            print("nothing")
-        }
-    }
-
-    func request(_ request: SKRequest, didFailWithError error: Error) {
-        print("Error Fetching product information");
-    }
-    
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        for transaction:AnyObject in transactions {
-            if let trans:SKPaymentTransaction = transaction as? SKPaymentTransaction{
-                switch trans.transactionState {
-                case .purchased:
-                    print("Product Purchased");
-                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-                    // Handle the purchase
-                    UserDefaults.standard.set(true , forKey: "purchased")
-                    hideBanner(adMobBannerView)
-                    break;
-                    
-                case .failed:
-                    print("Purchased Failed");
-                    SKPaymentQueue.default().finishTransaction(transaction as! SKPaymentTransaction)
-                    break;
-                    
-                case .restored:
-                    print("Already Purchased");
-                    SKPaymentQueue.default().restoreCompletedTransactions()
-                    // Handle the purchase
-                    UserDefaults.standard.set(true , forKey: "purchased")
-                    hideBanner(adMobBannerView)
-                    break;
-                    
-                default:
-                    break;
-                }
-            }
-        }
-    }
-    
+class ViewController: UIViewController, GADBannerViewDelegate {
     
     // Ad banner and interstitial views
     var adMobBannerView = GADBannerView()
     
-    var product_id: String?
-
     @IBOutlet weak var removeAdsButton: UIButton!
+    
+    @IBOutlet weak var restorePurchasesButton: UIButton!
+    
     // IMPORTANT: REPLACE THE RED STRING BELOW WITH THE AD UNIT ID YOU'VE GOT BY REGISTERING YOUR APP IN http://apps.admob.com
     let ADMOB_BANNER_UNIT_ID = "ca-app-pub-9733347540588953/7805958028"
     
@@ -80,27 +28,15 @@ class ViewController: UIViewController, GADBannerViewDelegate, SKProductsRequest
         
         // Init AdMob banner
         initAdMobBanner()
-        product_id = "com.dburgnerjr.TSARandomizer.tsa_randomizer_remove_ads"
-        //removeAdsButton.isHidden = true
-        SKPaymentQueue.default().add(self)
+        
+        IAPService.shared.getProducts()
         
         //Check if product is purchased
         if (UserDefaults.standard.bool(forKey: "purchased")) {
             // Hide ads
-            hideBanner(adMobBannerView)
-        } else {
-            showBanner(adMobBannerView)
-        }
-    }
-
-    @IBAction func aboutButton(_ sender: Any) {
-        let AboutVC = self.storyboard?.instantiateViewController(withIdentifier: "aboutVC")
-        self.present(AboutVC!, animated: true, completion: nil)
-    }
-    
-    @IBAction func startButton(_ sender: Any) {
-        let StartVC = self.storyboard?.instantiateViewController(withIdentifier: "startVC")
-        self.present(StartVC!, animated: true, completion: nil)
+            removeAdsButton.isHidden = true
+            restorePurchasesButton.isHidden = true
+        } 
     }
     
     @IBAction func shareButton(_ sender: Any) {
@@ -117,27 +53,21 @@ class ViewController: UIViewController, GADBannerViewDelegate, SKProductsRequest
     }
     
     @IBAction func removeAdsButton(_ sender: Any) {
-        //let alertController = UIAlertController(title: "Coming soon!", message:
-        //    "To this app.", preferredStyle: UIAlertControllerStyle.alert)
-        //alertController.addAction(UIAlertAction(title: "OK", style:
-        //    UIAlertActionStyle.default, handler:nil))
-        //present(alertController, animated: true, completion: nil)
-        // Can make payments
-        if (SKPaymentQueue.canMakePayments())
-        {
-            let productID:NSSet = NSSet(object: self.product_id!);
-            let productsRequest:SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>);
-            productsRequest.delegate = self;
-            productsRequest.start();
-            print("Fetching Products");
-        }else{
-            print("Can't make purchases");
+        IAPService.shared.purchase(product: .removeads)
+        if (UserDefaults.standard.bool(forKey: "purchased")) {
+            adMobBannerView.isHidden = true
+            removeAdsButton.isHidden = true
+            restorePurchasesButton.isHidden = true   // hidden because remove ads is only IAP
         }
     }
-
-    func buyProduct(product: SKProduct){
-        let payment = SKPayment(product: product)
-        SKPaymentQueue.default().add(payment);
+    
+    @IBAction func restorePurchasesButton(_ sender: Any) {
+        IAPService.shared.restorePurchases()
+        if (UserDefaults.standard.bool(forKey: "purchased")) {
+            adMobBannerView.isHidden = true
+            removeAdsButton.isHidden = true
+            restorePurchasesButton.isHidden = true   // hidden because remove ads is only IAP
+        }
     }
     
     // MARK: -  ADMOB BANNER

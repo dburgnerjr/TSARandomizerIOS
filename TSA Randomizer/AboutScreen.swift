@@ -20,9 +20,7 @@ class AboutScreen: UIViewController {
     }
     
     @IBAction func backButton(_ sender: Any) {
-        let MainVC = self.storyboard?.instantiateViewController(withIdentifier: "mainVC")
-        self.present(MainVC!, animated: true, completion: nil)
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
     
