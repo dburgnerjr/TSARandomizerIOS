@@ -21,22 +21,24 @@ class StartScreen: UIViewController, GADBannerViewDelegate {
         
         bannerView.isHidden = true
         bannerView.delegate = self
-        bannerView.adUnitID = "ca-app-pub-9733347540588953/7805958028"
-        bannerView.adSize = kGADAdSizeSmartBannerPortrait
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
         
-//        //Check if product is purchased
-//        if (UserDefaults.standard.bool(forKey: "purchased")) {
-//            // Hide ads
-//            adMobBannerView.isHidden = true
-//        } else {
-//            showBanner(adMobBannerView)
-//        }
-
         clickHereButton.isHidden = false
     }
-    
+
+    override func viewWillAppear(_ animated: Bool) {
+        // Check if product is purchased
+        let save = UserDefaults.standard
+        if (save.value(forKey: "Purchase") == nil) {
+            bannerView.adUnitID = "ca-app-pub-9733347540588953/7805958028"
+            bannerView.adSize = kGADAdSizeSmartBannerPortrait
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+        } else {
+            bannerView.isHidden = true
+        }
+        
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
