@@ -18,6 +18,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         GADMobileAds.configure(withApplicationID: "ca-app-pub-8379108590476103~1749640077")
+        
+        // if device is iPhone, load regular storyboard, otherwise load iPad storyboard
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            var mainView:UIStoryboard
+            mainView = UIStoryboard(name: "Main", bundle: nil)
+            
+            let VC:UIViewController = mainView.instantiateViewController(withIdentifier: "iPhoneStoryboard") as UIViewController
+            self.window!.rootViewController = VC
+        }
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            var mainView:UIStoryboard
+            mainView = UIStoryboard(name: "iPadStoryboard", bundle: nil)
+            
+            let VC:UIViewController = mainView.instantiateViewController(withIdentifier: "iPadStoryboard") as UIViewController
+            self.window!.rootViewController = VC
+        }
+            
         return true
     }
 

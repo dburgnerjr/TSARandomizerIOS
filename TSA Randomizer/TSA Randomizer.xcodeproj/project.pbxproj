@@ -15,6 +15,7 @@
 		2355B09B1F1847D800FAFA55 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2355B09A1F1847D800FAFA55 /* GoogleMobileAds.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		23620CE41F15879B001C5B0F /* AboutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23620CE31F15879B001C5B0F /* AboutScreen.swift */; };
 		23620CE61F158BFF001C5B0F /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23620CE51F158BFF001C5B0F /* StartScreen.swift */; };
+		23A1F1C91FA664D400AB3425 /* iPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23A1F1C81FA664D300AB3425 /* iPadStoryboard.storyboard */; };
 		23CA52401F8E6CF600195CDC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CA523F1F8E6CF600195CDC /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		23620CE31F15879B001C5B0F /* AboutScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutScreen.swift; sourceTree = "<group>"; };
 		23620CE51F158BFF001C5B0F /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		23725E131F81678A00DEA915 /* TSA Randomizer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "TSA Randomizer.entitlements"; path = "TSA Randomizer/TSA Randomizer.entitlements"; sourceTree = "<group>"; };
+		23A1F1C81FA664D300AB3425 /* iPadStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPadStoryboard.storyboard; sourceTree = "<group>"; };
 		23CA523F1F8E6CF600195CDC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -55,6 +57,7 @@
 				231CFCCD1F12EE17009DA084 /* AppDelegate.swift */,
 				231CFCCF1F12EE17009DA084 /* ViewController.swift */,
 				231CFCD11F12EE17009DA084 /* Main.storyboard */,
+				23A1F1C81FA664D300AB3425 /* iPadStoryboard.storyboard */,
 				231CFCD41F12EE17009DA084 /* Assets.xcassets */,
 				231CFCD61F12EE17009DA084 /* LaunchScreen.storyboard */,
 				231CFCD91F12EE17009DA084 /* Info.plist */,
@@ -155,6 +158,7 @@
 				231CFCD81F12EE17009DA084 /* LaunchScreen.storyboard in Resources */,
 				231CFCD51F12EE17009DA084 /* Assets.xcassets in Resources */,
 				231CFCD31F12EE17009DA084 /* Main.storyboard in Resources */,
+				23A1F1C91FA664D400AB3425 /* iPadStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
